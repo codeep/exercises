@@ -7,6 +7,17 @@ Input: [1, 4, ‘i am a string’, ‘456’]
 Output: “Numbers: 2, Strings: 2”
 
 Solution:
+function Coun(arr){
+    var a=0, b=0;
+    for(let i = 0; i< arr.length; i++){
+        if(typeof(arr[i])==='number'){
+            a++;
+        }else if(typeof(arr[i])==='string'){
+            b++;
+        }
+    }
+    return {'numbers':a, "strings":b};
+}
 
 
 
@@ -23,6 +34,18 @@ Input: ”Which would be worse - to live as a monster, or to die as a good man?�
 Output: "monster"
 
 Solution: 
+function Long(str){
+    var arr = str.split(/[\s,-]+/);
+    var max = arr[0].length;
+    var b = arr[0];
+    for(let i = 1; i<arr.length; i++){
+        if(max <= arr[i].length){
+            max = arr[i].length;
+            b = arr[i];
+        }
+    }
+    return b;
+}
 
 
 
@@ -37,6 +60,15 @@ Input: "[1, 1, 2, -3, 0, 8, 4, 0], 9"
 Output: "[]"
 
 Solution: 
+function Array(arr, n){
+    var ar1 = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] > n){
+            ar1.push(arr[i]);
+        }
+    }
+    return ar1;
+}
 
 
 
@@ -50,13 +82,155 @@ Input: 9425
 Output: “nine thousand four hundred twenty five”
 
 Solution:
-
+function Num(n){
+    var a, b;
+    var ob1 = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    if(String(n).length == 1){
+        for(let i = 0; i < ob1.length; i++ ){
+            if(n === i){
+                return ob1[i];
+            }
+        }
+    }else if(String(n).length == 2){
+       a = n%10;
+       n = Math.floor(n/10);
+       if(n === 1){
+           if(a === 0){
+               return "ten";
+           }else if( a === 1){
+               return "eleven";
+           }else if( a === 2){
+            return "twelve";
+           }else if(a === 8){
+               return "eighteen";
+           }else{
+               for(let i = 0; i < ob1.length; i++){
+                   if(a === i){
+                       return ob1[i]+'teen';
+                   }
+               }
+           }
+       }else{
+           for(let i = 1; i < ob1.length; i ++){
+            if(a === i){
+                a = ob1[i];
+            }
+           }
+           switch(n){
+               case 2:
+                   n = 'twenty';
+                   break;
+               case 3:
+                   n = 'thirty';
+                   break;
+                case 4:
+                    n = "forty";
+                    break;
+                case 5:
+                    n = "fifty";
+                    break;
+                case 6:
+                    n = "sixty";
+                    break;                     
+                case 7:
+                    n = "seventy";
+                    break;  
+                case 8:
+                    n = "eighty";
+                    break; 
+                case 9:
+                    n = "ninety";
+           }
+           if(a === 0){
+               return n;
+           }
+           return n + " " + a;
+       }
+    }else if(String(n).length == 3){
+        b=Math.floor(n/100);
+        n = n%100;
+        for(let i = 0; i < ob1.length; i++){
+            if(b === i){
+                b = ob1[i] + " " + "hundred";
+            }
+        }
+        a = n%10;
+        n = Math.floor(n/10);
+        if(n === 1){
+            if(a === 0){
+                return  b + " " + "ten";
+            }else if( a === 1){
+                return  b + " " + "eleven";
+            }else if( a === 2){
+             return  b + " " + "twelve";
+            }else if(a === 8){
+                return  b + " " + "eighteen";
+            }else{
+                for(let i = 3; i < ob1.length; i++){
+                    if(a === i){
+                        return b + " " +  ob1[i]+'teen';
+                    }
+                }
+            }
+        }else{
+            for(let i = 1; i < ob1.length; i ++){
+             if(a === i){
+                 a = ob1[i];
+             }
+            }
+            switch(n){
+                case 0:
+                    n ='';
+                    break;
+                case 2:
+                    n = 'twenty';
+                    break;
+                case 3:
+                    n = 'thirty';
+                    break;
+                 case 4:
+                     n = "forty";
+                     break;
+                 case 5:
+                     n = "fifty";
+                     break;
+                 case 6:
+                     n = "sixty";
+                     break;                     
+                 case 7:
+                     n = "seventy";
+                     break;  
+                 case 8:
+                     n = "eighty";
+                     break; 
+                 case 9:
+                     n = "ninety";
+            }
+            if(a === 0){
+                return b + " " + n;
+            }
+            return b+ " " + n + " " + a;
+        }
+    }
+}
 
 
 
 5) A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, 
-if 2 left rotations are performed on array [1, 2, 3, 4, 5], then the array would become [3, 4, 5, 1, 2].
+if  left rotations are performed on array [1, 2, 3, 4, 5], then the array would become [3, 4, 5, 1, 2].
 
 Solution: 
+function Shi(arr, n){
+    for(let j = 0; j<n; j++){
+        let a = arr[0];
+        for(let i = 1; i <arr.length; i++){
+            let b = arr[i-1];
+            arr[i-1] = arr[i];
+            arr[i]=arr[i-1];
+        }
+        arr[arr.length-1] = a;
+    }
+    return arr;
+}
 
 
