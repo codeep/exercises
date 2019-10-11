@@ -9,6 +9,10 @@ Output: “Numbers: 2, Strings: 2”
 Solution:
 
 
+let num = arr.filter((dam) => typeof(dam)==="number");
+let str = arr.filter((dam) => typeof(dam)==="string");
+
+console.log("numbers: " + num.length + ', strings: ' + str.length );
 
 
 
@@ -23,6 +27,20 @@ Input: ”Which would be worse - to live as a monster, or to die as a good man?�
 Output: "monster"
 
 Solution: 
+
+function strFunc(str){
+    let dam = str.split(" ");
+    let len = dam[0].length;
+
+    dam.forEach((elem)=>{
+      if(elem.length > len){
+        len = elem;
+      }
+    })
+    return len;
+  }
+
+
 
 
 
@@ -39,6 +57,15 @@ Output: "[]"
 Solution: 
 
 
+function dam(arr, num){
+    arr.forEach((elem)=>{
+      if(elem>num){
+          newarr.push(elem);
+        }   
+    })
+    return newarr; 
+}
+
 
 
 4) Write a function, which will receive a number between 0 to 999 and spell out that number in English.
@@ -54,9 +81,17 @@ Solution:
 
 
 
+
+
+
 5) A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, 
 if  left rotations are performed on array [1, 2, 3, 4, 5], then the array would become [3, 4, 5, 1, 2].
 
-Solution: 
+Solution:
 
-
+function convertArray(arr, tiv){
+    for(var i = 0;i < arr.length;i++){
+      let dam = arr.slice(0,tiv);
+      return arr.slice(tiv).concat(dam);
+    }
+}
