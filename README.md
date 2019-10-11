@@ -1,2 +1,4 @@
 # exercises
-js exercises for internsip
+
+Please fork add your solution then open pull request.
+Good luck!
