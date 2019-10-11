@@ -44,6 +44,7 @@ console.log(sorT([1,"10","hi",9]));
 console.log(longestW("London is a capital of The Great Britain"));
 
 3_____________________________________________________
+
  var arr=[];
  var newarray=[];
 function larger(arr,n){
@@ -70,6 +71,7 @@ function larger(arr,n){
 
 
 5________________________________________________
+
  var arr=[];
  function rotate(arr,n){
      return arr.splice(n,arr.length).concat(arr.splice(0,n));
