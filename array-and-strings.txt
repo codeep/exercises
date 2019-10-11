@@ -84,12 +84,16 @@ function NumToText(num) {
             num = Math.floor(num / 10);
             let mat2 = num % 10;
             let mat3 = Math.floor(num / 10);
+            if(mat2 == 0 && mat1 == 0)
+                return nums[mat3] + " hundred ";
             if (mat2 == 0) {
                 return nums[mat3] + " hundred " + nums[mat1];
             }
             if (mat2 == 1) {
                 return nums[mat3] + " hundred " + nums2[mat1];
             }
+            if(mat1 == 0)
+                return nums[mat3] + " hundred " + nums3[mat2 - 2];
             return nums[mat3] + " hundred " + nums3[mat2 - 2] + " " + nums[mat1];
         }
         let mat4 = Math.floor(num / 10);
@@ -102,6 +106,7 @@ function NumToText(num) {
 
     }
     return nums[num];
+}
 
 
 5) A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, 
