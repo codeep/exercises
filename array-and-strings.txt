@@ -1,0 +1,62 @@
+1) Given an array of strings and numbers. Print the number of integers and the number of strings in the array.
+
+Input: [1, ‘10’, ‘hi’, 2, 3]
+Output: “Numbers: 3, Strings: 2”
+
+Input: [1, 4, ‘i am a string’, ‘456’]
+Output: “Numbers: 2, Strings: 2”
+
+Solution:
+
+
+
+
+
+
+2) Write a function that accepts a string(a sentence) as a parameter and finds the longest word within the string․ 
+If there are several words which are the longest ones, print the last word(words can be separated by space, comma or hyphen).
+
+Input: “A revolution without dancing is a revolution not worth having.”
+Output: "revolution"
+
+Input: ”Which would be worse - to live as a monster, or to die as a good man?”
+Output: "monster"
+
+Solution: 
+
+
+
+
+3) Write a function which receives an array and a number as arguments and returns a new array from the elements of the given 
+array which are larger than the given number.
+
+Input: "[10, 25, 16, -5, 30, 15, 24] , 16"
+Output: "[25, 30, 24]"
+
+Input: "[1, 1, 2, -3, 0, 8, 4, 0], 9"
+Output: "[]"
+
+Solution: 
+
+
+
+
+4) Write a function, which will receive a number between 0 to 999 and spell out that number in English.
+
+Input: 5
+Output: "five"
+
+Input: 9425
+Output: “nine thousand four hundred twenty five”
+
+Solution:
+
+
+
+
+5) A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, 
+if  left rotations are performed on array [1, 2, 3, 4, 5], then the array would become [3, 4, 5, 1, 2].
+
+Solution: 
+
+
