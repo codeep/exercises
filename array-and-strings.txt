@@ -7,7 +7,17 @@ Input: [1, 4, ‘i am a string’, ‘456’]
 Output: “Numbers: 2, Strings: 2”
 
 Solution:
-
+function printNum(array) {
+    let numOfString = 0;
+    let numOfNumber = 0;
+    array.forEach(element => {
+        if (typeof element != "number")
+            numOfString++
+        else
+            numOfNumber++
+    });
+    console.log("Number:" + numOfNumber, "String:" + numOfString)
+}
 
 
 
@@ -24,6 +34,15 @@ Output: "monster"
 
 Solution: 
 
+function LongestWord(string) {
+    let arr = string.split(/[ ,.-]/);
+    let longest = "";
+    arr.forEach(element => {
+        if (element.length >= longest.length)
+            longest = element;
+    });
+    return longest;
+}
 
 
 
@@ -38,7 +57,9 @@ Output: "[]"
 
 Solution: 
 
-
+function Comparison(array,num){
+    return array.filter(x => x > num)
+}
 
 
 4) Write a function, which will receive a number between 0 to 999 and spell out that number in English.
@@ -51,7 +72,36 @@ Output: “nine thousand four hundred twenty five”
 
 Solution:
 
+function NumToText(num) {
+    const nums = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    const nums2 = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+    const nums3 = ["twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
+
+    if (Math.floor(num / 10) != 0) {
+        let mat1 = num % 10;
+        if (Math.floor(num / 100) != 0) {
+            num = Math.floor(num / 10);
+            let mat2 = num % 10;
+            let mat3 = Math.floor(num / 10);
+            if (mat2 == 0) {
+                return nums[mat3] + " hundred " + nums[mat1];
+            }
+            if (mat2 == 1) {
+                return nums[mat3] + " hundred " + nums2[mat1];
+            }
+            return nums[mat3] + " hundred " + nums3[mat2 - 2] + " " + nums[mat1];
+        }
+        let mat4 = Math.floor(num / 10);
+        if (mat4 == 1)
+            return nums2[mat1]
+        else if (mat1 == 0)
+            return nums3[mat4 - 2]
+        else
+            return nums3[mat4 - 2] + " " + nums[mat1]
+
+    }
+    return nums[num];
 
 
 5) A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, 
@@ -59,4 +109,11 @@ if  left rotations are performed on array [1, 2, 3, 4, 5], then the array would 
 
 Solution: 
 
-
+function rotateWithNum (array, num){
+    for (let i = 0; i < num; i++) {
+        let temp = array[0];
+        array.shift();
+        array.push(temp);
+    }
+    return array;
+}
