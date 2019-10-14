@@ -50,3 +50,12 @@ The letter is shifted for as many values as the value of the key.
 5. Write down a function which will print the number of the rest seconds untill the current day's end.
 Example: if current time is 23:59:45 function should print 15
 Example: if current time is 23:50:45 function should print 555
+
+---------------
+
+6. Write down a function which will print week day based on provided day.
+Input: "2019/10/14"
+Output: "Monday"
+
+Input: "2014/09/12"
+Output: "Friday"
