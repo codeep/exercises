@@ -7,7 +7,7 @@ Input: [1, 4, ‘i am a string’, ‘456’]
 Output: “Numbers: 2, Strings: 2”
 
 Solution:
-function printNum(array) {
+function countOfStringAndNumber(array) {
     let numOfString = 0;
     let numOfNumber = 0;
     array.forEach(element => {
@@ -34,7 +34,7 @@ Output: "monster"
 
 Solution: 
 
-function LongestWord(string) {
+function longestWord(string) {
     let arr = string.split(/[ ,.-]/);
     let longest = "";
     arr.forEach(element => {
