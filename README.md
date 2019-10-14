@@ -8,20 +8,47 @@ Good luck!
 1______________
 
 var arr=[];
-var n=0;;
- var m=0;
-
- function sorT(arr){
+function sorT(arr){
+ let n=0;
+ let m=0;
    
 for(var i=0; i<arr.length;i++){
     
-    if( typeof(arr[i]) == 'number' )
+    if( typeof(arr[i]) == 'number' ){
     n++;
-    
-     else if (typeof(arr[i]) == 'string')
+    }
+     else if (typeof(arr[i]) == 'string'){
    m++;
+   }
 }
  return "Numbers :" + n + " " + "Strings :" + m;
+}
+console.log(sorT([1,"10","hi",9]));
+or
+const arr=[];
+
+function sorT(arr){
+    
+    let n=0;
+    
+    let m=0;
+   
+    arr.forEach(elm => {
+        
+    
+    if( typeof(elm) == 'number' ){
+    
+    n++;
+    }
+    
+     else if (typeof(elm) == 'string'){
+     
+    m++;
+    
+    }});
+
+return "Numbers :" + n + " " + "Strings :" + m;
+
 }
 console.log(sorT([1,"10","hi",9]));
 
@@ -41,10 +68,11 @@ console.log(sorT([1,"10","hi",9]));
     for(var i=0;i<arr.length;i++){
     
        
-    if(word.length < arr[i].length)
+    if(word.length < arr[i].length){
    
     
      word=arr[i];
+     }
      
    } 
    
@@ -64,10 +92,10 @@ function larger(arr,n){
 
    for(var i=0; i< arr.length;i++){
    
-       if(arr[i]>n)
+       if(arr[i]>n){
        
        newarray.push(arr[i]);
-       
+       }
    } 
    
    return newarray;
@@ -80,12 +108,13 @@ function larger(arr,n){
 
 function convert(num) {
 
-  if (num == 0 )  return "zero"; 
-  
-  else if( num> 999)
+  if (num == 0 )  {
+  return "zero"; 
+  }
+  else if( num> 999){
   
   return "Too big";
-  
+  }
   else return convert_hundreds(num);
   
 }
