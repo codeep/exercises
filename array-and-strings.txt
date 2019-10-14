@@ -9,10 +9,10 @@ Output: “Numbers: 2, Strings: 2”
 Solution:
 
 
-let num = arr.filter((dam) => typeof(dam)==="number");
-let str = arr.filter((dam) => typeof(dam)==="string");
 
-console.log("numbers: " + num.length + ', strings: ' + str.length );
+let num = arr.filter((n) => typeof(n)==="number");
+
+console.log("numbers: " + num.length + ', strings: ' + (arr.length-num.length));
 
 
 
@@ -28,7 +28,7 @@ Output: "monster"
 
 Solution: 
 
-function strFunc(str){
+function longestWord(str){
     let dam = str.split(" ");
     let len = dam[0].length;
 
@@ -57,7 +57,7 @@ Output: "[]"
 Solution: 
 
 
-function dam(arr, num){
+function largerNumber(arr, num){
     arr.forEach((elem)=>{
       if(elem>num){
           newarr.push(elem);
@@ -132,9 +132,10 @@ if  left rotations are performed on array [1, 2, 3, 4, 5], then the array would 
 
 Solution:
 
-function convertArray(arr, tiv){
+function convertArray(arr, num){
     for(var i = 0;i < arr.length;i++){
-      let dam = arr.slice(0,tiv);
-      return arr.slice(tiv).concat(dam);
+      let dam = arr.slice(0,num);
+      return arr.slice(num).concat(dam);
     }
 }
+
