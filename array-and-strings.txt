@@ -11,10 +11,12 @@ function countOfStringAndNumber(array) {
     let numOfString = 0;
     let numOfNumber = 0;
     array.forEach(element => {
-        if (typeof element != "number")
+        if (typeof element != "number"){
             numOfString++
-        else
+        }
+        else{
             numOfNumber++
+        }
     });
     console.log("Number:" + numOfNumber, "String:" + numOfString)
 }
@@ -38,8 +40,9 @@ function longestWord(string) {
     let arr = string.split(/[ ,.-]/);
     let longest = "";
     arr.forEach(element => {
-        if (element.length >= longest.length)
+        if (element.length >= longest.length){
             longest = element;
+        }
     });
     return longest;
 }
@@ -84,26 +87,30 @@ function NumToText(num) {
             num = Math.floor(num / 10);
             let mat2 = num % 10;
             let mat3 = Math.floor(num / 10);
-            if(mat2 == 0 && mat1 == 0)
+            if (mat2 == 0 && mat1 == 0){
                 return nums[mat3] + " hundred ";
+            }
             if (mat2 == 0) {
                 return nums[mat3] + " hundred " + nums[mat1];
             }
             if (mat2 == 1) {
                 return nums[mat3] + " hundred " + nums2[mat1];
             }
-            if(mat1 == 0)
+            if (mat1 == 0){
                 return nums[mat3] + " hundred " + nums3[mat2 - 2];
+            }
             return nums[mat3] + " hundred " + nums3[mat2 - 2] + " " + nums[mat1];
         }
         let mat4 = Math.floor(num / 10);
-        if (mat4 == 1)
+        if (mat4 == 1){
             return nums2[mat1]
-        else if (mat1 == 0)
+        }
+        else if (mat1 == 0){        
             return nums3[mat4 - 2]
-        else
+        }
+        else{
             return nums3[mat4 - 2] + " " + nums[mat1]
-
+        }
     }
     return nums[num];
 }
