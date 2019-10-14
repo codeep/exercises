@@ -65,6 +65,30 @@ The letter is shifted for as many values as the value of the key.
   Input: bcd, 1
   Output: abc
   
+  
+  function encrypt(text, shift) {
+        var result = "";
+        for (var i = 0; i < text.length; i++) {
+            var c = text.charCodeAt(i);
+            if(c >= 65 && c <=  90) {
+               result += String.fromCharCode((c - 65 + shift) % 26 + 65); 
+            }
+            else if(c >= 97 && c <= 122){
+                result += String.fromCharCode((c - 97 + shift) % 26 + 97);
+          }
+        }
+    return result;
+}
+ 
+function decrypt(text,shift){
+    var result = "";
+    shift = (26 - shift) % 26;
+    result = encrypt(text,shift);
+    return result;
+}   
+
+console.log(encrypt('bcd',25));
+  
 ---------------
 
 5. Write down a function which will print the number of the rest seconds until the current day's end.
