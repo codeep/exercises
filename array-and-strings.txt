@@ -7,6 +7,18 @@ Input: [1, 4, ‘i am a string’, ‘456’]
 Output: “Numbers: 2, Strings: 2”
 
 Solution:
+let arr = [1, '10', 'hi', 2, 3];
+function findNumbersAndSringsCount (arr){
+    var a=0, b=0;
+    for(let i = 0; i< arr.length; i++){
+        if(typeof(arr[i])==='number'){
+            a++;
+        }else if(typeof(arr[i])==='string'){
+            b++;
+        }
+    }
+    return {'numbers':a, "strings":b};
+}
 
 
 
@@ -23,6 +35,18 @@ Input: ”Which would be worse - to live as a monster, or to die as a good man?�
 Output: "monster"
 
 Solution: 
+function longestWord(str){
+    var arr = str.split(/[\s,-]+/);
+    var max = arr[0].length;
+    var b = arr[0];
+    arr.forEach(function(v){
+        if(max <= v.length){
+            max = v.length;
+            b = v;
+        }
+    })
+    return b;
+}
 
 
 
@@ -37,7 +61,9 @@ Input: "[1, 1, 2, -3, 0, 8, 4, 0], 9"
 Output: "[]"
 
 Solution: 
-
+function arrayLargenumber(arr, n){
+    return arr.filter((v)=>(v>n));
+}
 
 
 
@@ -50,13 +76,45 @@ Input: 9425
 Output: “nine thousand four hundred twenty five”
 
 Solution:
-
-
+function numberToWords(n){
+    var ob = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    var ob2 = ['ten','eleven','twelve','thirteen', 'fourteen','fifteen','sixteen', 'seventeen','eighteen','nineteen'];
+    var ob3 = ['twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+    if(n<10){
+        return ob[n];
+    }else if(n<1000 && n>9){
+        var b = Math.floor(n/100);
+        if(b === 0){
+            b = "";
+        }else{
+            n = n%100;
+            b = ob[b] + " hundred ";
+        }
+        var a = n%10; 
+        if(n<20 && n>9){
+            return b + ob2[a];
+        }
+        n = Math.floor(n/10);
+        if(a===0 && n===0){
+            return b;
+        }else if(n == 0){
+            return b + ob[a];
+        }else if(a === 0){
+            return b + ob3[n-2];
+        }
+        n = ob3[n-2] + " " + ob[a];
+       return b + n;
+    }
+}
 
 
 5) A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, 
-if 2 left rotations are performed on array [1, 2, 3, 4, 5], then the array would become [3, 4, 5, 1, 2].
+if  left rotations are performed on array [1, 2, 3, 4, 5], then the array would become [3, 4, 5, 1, 2].
 
 Solution: 
+function totheLeft(arr, n){
+    var a= arr.splice(0,n);
+    return arr.concat(a);
+}
 
 
