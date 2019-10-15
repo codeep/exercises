@@ -55,14 +55,74 @@ The letter is shifted for as many values as the value of the key.
 
   Input: Hello world, 7
   Output Olssv dvysk
-
+function caesarCipherEncode(str, n){
+    var a = [];
+    for(let i = 0; i < str.length; i++){
+        if(str.charCodeAt(i)>96 && str.charCodeAt(i)<123){
+            if(str.charCodeAt(i) + n > 122){
+                a += String.fromCharCode(str.charCodeAt(i) + n - 122 + 96);
+            }else{
+                a += String.fromCharCode(str.charCodeAt(i) + n);
+            }
+        }else if(str.charCodeAt(i)>64 && str.charCodeAt(i)<91){
+            if(str.charCodeAt(i) + n > 90){
+                a += String.fromCharCode(str.charCodeAt(i) + n - 90 + 64);
+            }else{
+                a += String.fromCharCode(str.charCodeAt(i) + n);
+            }
+        }else{
+            a += str[i];
+        }
+    }
+    return a;
+}
 2. Decode function
   Input: Olssv dvysk, 7
   Output: Hello world
 
   Input: bcd, 1
   Output: abc
-  
+  function caesarCipherDecode(str, n){
+    var a = [];
+    for(let i = 0; i < str.length; i++){
+        if(str.charCodeAt(i)>96 && str.charCodeAt(i)<123){
+            if(str.charCodeAt(i) - n < 97){
+                a += String.fromCharCode(str.charCodeAt(i) - n + 122 - 96);
+            }else{
+                a += String.fromCharCode(str.charCodeAt(i) - n);
+            }
+        }else if(str.charCodeAt(i)>64 && str.charCodeAt(i)<91){
+            if(str.charCodeAt(i) - n < 65){
+                a += String.fromCharCode(str.charCodeAt(i) - n + 91 - 65);
+            }else{
+                a += String.fromCharCode(str.charCodeAt(i) - n);
+            }
+        }else{
+            a += str[i];
+        }
+    }
+    return a;
+}function caesarCipherDecode(str, n){
+    var a = [];
+    for(let i = 0; i < str.length; i++){
+        if(str.charCodeAt(i)>96 && str.charCodeAt(i)<123){
+            if(str.charCodeAt(i) - n < 97){
+                a += String.fromCharCode(str.charCodeAt(i) - n + 122 - 96);
+            }else{
+                a += String.fromCharCode(str.charCodeAt(i) - n);
+            }
+        }else if(str.charCodeAt(i)>64 && str.charCodeAt(i)<91){
+            if(str.charCodeAt(i) - n < 65){
+                a += String.fromCharCode(str.charCodeAt(i) - n + 91 - 65);
+            }else{
+                a += String.fromCharCode(str.charCodeAt(i) - n);
+            }
+        }else{
+            a += str[i];
+        }
+    }
+    return a;
+}
 ---------------
 
 5. Write down a function which will print the number of the rest seconds until the current day's end.
